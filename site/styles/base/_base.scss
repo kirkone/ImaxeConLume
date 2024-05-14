@@ -1,0 +1,13 @@
+@use 'typography';
+
+body {  
+    background-color: hsl(var(--color-background-hsl));
+    color: hsl(var(--color-hsl));
+
+    font-family: typography.$font;
+    font-weight: 100;
+    font-size: 1.6rem;
+      
+    position: relative;
+    margin: 2rem;
+}

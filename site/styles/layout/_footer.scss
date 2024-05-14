@@ -1,0 +1,10 @@
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 2rem 2rem 2rem;
+  font-size: .8em;
+  line-height: 2rem;
+  z-index: 49;
+  position: relative;
+  background-color: hsl(var(--color-background-hsl));
+}

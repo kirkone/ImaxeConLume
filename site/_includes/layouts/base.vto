@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="{{ site.meta.author.name }} - {{ it.description || site.meta.description }}">
+  <link rel="stylesheet" href="/styles/main.css" />
+  <title>{{ it.title || site.meta.title }} - {{ site.meta.author.name }}</title>
+</head>
+<body>
+  <a href="#content" title="Zum Inhalt springen">Zum Inhalt springen</a>
+  <a name="top"></a>
+
+  <header>
+    <h2>
+      <a href="/" title="Startseite">Kirsten Kluge</a>
+    </h2>
+    {{ include "partials/navigation.vto" }}
+  </header>
+  
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    © 2024 Kirsten Kluge
+  </footer>
+</body>
+</html>
