@@ -8,19 +8,22 @@ menu:
 
 <h1>Ansichtssachen</h1>
 <p>
-	“<cite>Ansichtssache</cite>” bedeutet, dass die Bewertung einer Sache nicht auf objektiven Kriterien, sondern auf der eigenen Meinung oder Einschätzung beruht. <br>
-	Es ist ein Begriff, der oft verwendet wird, um auszudrücken, dass es unterschiedliche Auffassungen oder Perspektiven gibt.
+    “<cite>Ansichtssache</cite>” bedeutet, dass die Bewertung einer Sache nicht auf objektiven Kriterien,
+    sondern auf der eigenen Meinung oder Einschätzung beruht. <br>
+    Es ist ein Begriff, der oft verwendet wird, um auszudrücken, dass es unterschiedliche Auffassungen oder
+    Perspektiven gibt.
 </p>
 <p>
-	Gleiches gilt auch für Bilder - Ansichtssache eben!
+    Gleiches gilt auch für Bilder - Ansichtssachen eben!
 </p>
+<h2>Random images</h2>
 
-<section class="river">
+<section class="gallery">
 	{{- for image of images |> shuffle |> limit(20) }}
 	  <article tabindex="0"  id="{{ image.name |> urlencode }}" style="--width:{{ image.size.width }}; --height:{{ image.size.height }};">
-      <img src="{{ 'images/' + image.name + '/' + image.file }}" alt="{{ image.description }}" transform-images="avif webp jpg 300@2">
+      <img src="{{ 'images/' + image.name + '/' + image.file }}" alt="{{ image.description }}" transform-images="avif webp jpg 400@2" loading="lazy" decoding="async">
       <aside>
-        <p>{{ image.name }}</p>
+        <p>{{ image.description }}</p>
         <p>
           {{ image.photo.focalLength }}mm {{ image.photo.exposureNumerator }}/{{ image.photo.exposureDenominator }} F{{ image.photo.fNumber.toFixed(1) }} ISO {{ image.photo.iso }}
         </p>
@@ -31,7 +34,7 @@ menu:
           <a href="#{{images[loop.index0-1].name |> trimExtension |> urlencode }}" title="previous">&lt;</a>
         {{ /if }} #}}
         <a href="#!" title="close">close</a>
-        {{# {{ picturezoom image.src, image.description, "100vw"  }} #}}
+        <img src="{{ 'images/' + image.name + '/' + image.file }}" alt="{{ image.description }}" transform-images="avif webp jpg" loading="lazy" decoding="async"/>
         {{# {{ if not loop.last }}
           <a href="#{{images[loop.index0+1].name |> trimExtension |> urlencode }}" title="next">&gt;</a>
         {{ /if }} #}}

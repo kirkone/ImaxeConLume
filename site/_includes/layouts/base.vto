@@ -8,14 +8,35 @@
   <title>{{ it.title || site.meta.title }} - {{ site.meta.author.name }}</title>
 </head>
 <body>
-  <a href="#content" title="Zum Inhalt springen">Zum Inhalt springen</a>
-  <a name="top"></a>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger">
+
+  <menu>
+    <section>
+      <h3>Years</h3>
+      {{ include "partials/menu.vto" }}
+    </section>
+    <section>
+            <h3>Pages</h3>
+            <a href="/">Home</a>
+            {{ include "partials/navigation.vto" }}
+        </section>
+  </menu>
 
   <header>
-    <h2>
-      <a href="/" title="Startseite">Kirsten Kluge</a>
-    </h2>
-    {{ include "partials/navigation.vto" }}
+    <div>
+      <h2>
+        <label for="nav-trigger" title="Menu">
+          <span>Menu</span>
+          <span>i</span>
+          <span>i</span>
+          <span>i</span>
+        </label>
+        <a href="/">Kirsten Kluge</a>
+      </h2>
+      <nav>
+        {{ include "partials/navigation.vto" }}
+      </nav>
+    </div>
   </header>
   
   <main>

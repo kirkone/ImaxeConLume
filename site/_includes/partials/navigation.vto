@@ -1,9 +1,3 @@
-<nav>
-    {{- for entry of search.pages("menu.visible=true", "menu.order") }}
-        <a href="{{ entry.url }}" {{ if entry.url == url }} class="active"{{ /if }}>{{ entry.menu.title || entry.title }}</a>
-    {{ /for }}
-    <span>·</span>
-    {{- for entry of years }}
-        <a href="/{{ entry }}/" {{ if entry.url == url }} class="active"{{ /if }}>{{ entry }}</a>
-    {{ /for }}
-</nav>
+{{- for entry of search.pages("menu.visible=true", "menu.order") }}
+    <a href="{{ entry.url }}" {{ if entry.url == url }} class="active"{{ /if }}>{{ entry.menu.title || entry.title }}</a>
+{{ /for }}

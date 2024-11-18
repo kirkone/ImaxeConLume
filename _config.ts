@@ -16,7 +16,7 @@ const site = lume(
 .use(
     transformImages(
         {
-            cache: "../.cache/images"
+            cache: ".cache/images"
         }
     )
 )

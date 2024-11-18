@@ -4,18 +4,12 @@
 
 @use './abstracts/variables';
 
-@use "./vendors/gg";
-
 @use "./base/reset";
-@use "./base/base";
 @use "./base/typography";
+@use "./base/base";
 
 @use "./layout/header";
 @use "./layout/navigation";
-@use "./layout/main";
 @use "./layout/footer";
 
-@use "./components/river";
-@use "./components/deck";
-
-@use "./pages/about";
+@use "./pages/images";
